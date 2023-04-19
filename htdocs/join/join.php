@@ -36,25 +36,25 @@
                         <legend class="blind">회원가입 영역</legend>
                         <div>
                             <label for="youEmail" class="required">이메일</label>
-                            <input type="email" id="youEmail" name="youEmail" placeholder="이메일을 입력해주세요." required>
+                            <input type="email" id="youEmail" name="youEmail" placeholder="이메일을 입력해주세요." class="inputStyle" required>
                         </div>
                         <div>
                             <label for="youName" class="required">이름</label>
-                            <input type="text" id="youName" name="youName" placeholder="이름을 입력해주세요." required>
+                            <input type="text" id="youName" name="youName" placeholder="이름을 입력해주세요." class="inputStyle" required>
                         </div>
                         <div>
                             <label for="youPass" class="required">비밀번호</label>
-                            <input type="password" id="youPass" name="youPass" placeholder="비밀번호를 입력해주세요." required>
+                            <input type="password" id="youPass" name="youPass" placeholder="비밀번호를 입력해주세요." class="inputStyle" required>
                         </div>
                         <div>
                             <label for="youPassC" class="required">비밀번호 확인</label>
-                            <input type="password" id="youPassC" name="youPassC" placeholder="비밀번호를 다시한번 입력해주세요." required>
+                            <input type="password" id="youPassC" name="youPassC" placeholder="비밀번호를 다시한번 입력해주세요." class="inputStyle" required>
                         </div>
                         <div>
                             <label for="youPhone" class="required">연락처</label>
-                            <input type="text" id="youPhone" name="youPhone" placeholder="연락받으실 번호를 입력해주세요." required>
+                            <input type="text" id="youPhone" name="youPhone" placeholder="연락받으실 번호를 입력해주세요." class="inputStyle" required>
                         </div>
-                        <button type="submit">회원가입 완료</button>
+                        <button type="submit" class="btnStyle">회원가입 완료</button>
                     </fieldset>
                 </form>
             </div>

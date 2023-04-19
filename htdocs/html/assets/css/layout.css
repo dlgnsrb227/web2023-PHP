@@ -4,6 +4,9 @@
 */
 
 /* header__inner */
+#header {
+    position: relative;
+}
 .header__inner {
     border-bottom: 3px solid var(--color__black);
     position: relative;
@@ -56,6 +59,9 @@
     right: 0;
     top: 18px;
     z-index: 10;
+}
+.header__inner .right li {
+    display: inline-block;
 }
 .header__inner .right a {
     font-size: 0.88rem;

@@ -26,7 +26,8 @@
     padding: 0 5%;
 }
 .intro__btn {
-    margin-top: 60px;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 .intro__btn a {
     background-color: var(--color__black);
