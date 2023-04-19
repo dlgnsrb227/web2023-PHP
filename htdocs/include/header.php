@@ -15,7 +15,7 @@
                     </ul>
                 <?php } else { ?>
                     <ul>
-                        <li><a href="join.html">회원가입</a></li>
+                        <li><a href="../join/join.php">회원가입</a></li>
                     </ul>
                 <?php } ?>
         </div>

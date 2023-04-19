@@ -140,7 +140,6 @@
                         msg("이미 회원가입이 되어있습니다. 로그인해주세요.");
                         exit;
                     }
-
                 ?>
             </p>
             <div class="intro__btn"><a href="#">로그인</a></div>
