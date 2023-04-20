@@ -42,7 +42,7 @@ input,
 select,
 table,
 textarea {
-    font-family: var(--main__font), 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', 'dotum', '돋움';
+    font-family: var(--main__win), 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', 'dotum', '돋움';
     font-weight: 500;
     font-size: 1rem;
     line-height: 1.5;
