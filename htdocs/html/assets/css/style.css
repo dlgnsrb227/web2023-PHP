@@ -16,4 +16,7 @@
 @import "join.css";
 
 /* login */
-@import "login.css"
+@import "login.css";
+
+/* board */
+@import "board.css";
