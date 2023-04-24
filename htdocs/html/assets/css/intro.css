@@ -5,6 +5,10 @@
     justify-content: space-between;
     padding: 3rem 0;
 }
+.intro__inner h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
+}
 .intro__images {
     width: 27%;
 }
@@ -21,6 +25,14 @@
     max-width: 300px;
     margin-bottom: 3%;
 }
+/* .intro__inner .intro__images.small {
+    width: 20%;
+    max-width: 300px;
+    background-color: #000;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 100px;
+} */
 .intro__inner.center .intro__text {
     text-align: center;
     padding: 0 5%;

@@ -48,6 +48,13 @@ textarea {
     line-height: 1.5;
     word-break: keep-all;
 }
+body.windows button,
+body.windows input,
+body.windows select,
+body.windows table,
+body.windows textarea {
+    font-family: var(--main__win);
+}
 
 /* 링크 초기화 */
 a {
@@ -80,6 +87,13 @@ img {
 /* 보더 초기화 */
 img, fieldset, button {
     border: 0;
+}
+
+/* 테이블 초기화 */
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
 
 /* 클리어픽스 */

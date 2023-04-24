@@ -1,57 +1,30 @@
+<?php
+    include "../connect/connect.php";
+    include "../connect/session.php";
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시판 페이지</title>
+    <title>게시판</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- SCRIPT -->
-    <script defer src="assets/js/common.js"></script>
-    
+    <?php include "../include/head.php" ?>
 </head>
 <body class="gray">
-    
-    <div id="skip">
-        <a href="#header">헤더 영역 바로가기</a>
-        <a href="#main">컨텐츠 영역 바로가기</a>
-        <a href="#footer">푸터 영역 바로가기</a>
-    </div>
-    <!-- //skip -->
+    <?php include "../include/skip.php" ?>
+    <!-- skip -->
 
-    <header id="header">
-        <div class="header__inner container">
-            <div class="left">
-                <a href="../index.html" class="star">
-                    <span class="blind">메인으로</span>
-                </a>
-            </div>
-            <h1 class="logo"><a href="main.html">Developer Blog</a></h1>
-            <div class="right">
-                <ul>
-                    <li><a href="join.html">회원가입</a></li>
-                </ul>
-            </div>
-        </div>
-        <nav class="nav__inner">
-            <ul>
-                <li><a href="join.html">회원가입</a></li>
-                <li><a href="login.html">로그인</a></li>
-                <li><a href="#">게시판</a></li>
-                <li><a href="#">블로그</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- //header -->
+    <?php include "../include/header.php" ?>
+    <!-- include -->
 
     <main id="main" class="container">
         <div class="intro__inner center bmStyle">
             <picture class="board__images">
-                <source srcset="assets/img/board01.jpg, assets/img/board01@2x.jpg 2x, assets/img/board01@3x.jpg 3x" />
-                <img src="assets/img/board01.jpg" alt="소개이미지">
+                <source srcset="../assets/img/board01.jpg, ../assets/img/board01@2x.jpg 2x, ../assets/img/board01@3x.jpg 3x" />
+                <img src="../assets/img/board01.jpg" alt="소개이미지">
             </picture>
             <h2>게시판</h2>
             <p class="intro__text">
@@ -77,7 +50,7 @@
                                 <option value="name">등록자</option>
                             </select>
                             <button type="submit" class="btnStyle3 white">검색</button>
-                            <a href="boardWrite.html" class="btnStyle3">글쓰기</a>
+                            <a href="boardWrite.php" class="btnStyle3">글쓰기</a>
                         </fieldset>
                     </form>
                 </div>
@@ -191,14 +164,10 @@
             </div>
         </div>
     </main>
-    <!-- //main -->
+    <!-- main -->
 
-    <footer id="footer">
-        <div class="footer__inner container btStyle mb100">
-            <div>Copyright @ 2023 HoongBoy</div>
-            <div>Blog by Hoong's</div>
-        </div>
-    </footer>
-    <!-- //footer -->
+    <?php include "../include/footer.php" ?>
+    <!-- footer -->
+
 </body>
 </html>
