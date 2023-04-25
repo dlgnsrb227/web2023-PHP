@@ -10,10 +10,16 @@
     $boardContents = $connect -> real_escape_string($boardContents);
     $memberID = $_SESSION['memberID'];
 
-    $sql = "UPDATE board SET boardTitle = '{$boardTitle}', boardContents = '{$boardContents}' WHERE boardID = '{$boardID}'";
-    $connect -> query($sql);
-?>
+    $aaa = "SELECT memberID FROM board WHERE boardID = '${boardID}'";
+    $result = $connect -> query($aaa);
+    $bbb = $result -> fetch_assoc();
 
-<script>
-    location.href = "board.php";
-</script>
+    if($bbb['memberID'] == $memberID){
+        $sql = "UPDATE board SET boardTitle = '{$boardTitle}', boardContents = '{$boardContents}' WHERE boardID = '{$boardID}'";
+        $connect -> query($sql);
+        echo "<script>location.href = 'board.php';</script>";
+    } else {
+        echo "글의 작성자만 수정 가능합니다.";
+    }
+
+?>

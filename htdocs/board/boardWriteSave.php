@@ -13,7 +13,6 @@
 
     $sql = "INSERT INTO board(memberID, boardTitle, boardContents, boardView, regTime) VALUES('$memberID', '$boardTitle', '$boardContents', '$boardView', '$regTime')";
     $connect -> query($sql);
-
 ?>
 
 <script>

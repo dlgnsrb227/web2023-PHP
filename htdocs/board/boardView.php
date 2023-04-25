@@ -65,21 +65,24 @@
                         </tr> -->
 
 <?php
-    $boardID = $_GET['boardID'];
-    // echo $boardID;
-    $sql = "SELECT b.boardContents, b.boardTitle, m.youName, b.regTime, b.boardView FROM board b JOIN members m ON(m.memberID = b.memberID) WHERE b.boardID = {$boardID}";
-    $result = $connect -> query($sql);
+    if (isset($_GET['boardID'])) {
+        $boardID = $_GET['boardID'];
+        $sql = "SELECT b.boardContents, b.boardTitle, m.youName, b.regTime, b.boardView FROM board b JOIN members m ON(m.memberID = b.memberID) WHERE b.boardID = {$boardID}";
+        $result = $connect->query($sql);
 
-    if($result){
-        $info = $result -> fetch_array(MYSQLI_ASSOC);
+        if ($result) {
+            $info = $result->fetch_array(MYSQLI_ASSOC);
 
-        echo "<tr><th>제목</th><td>".$info['boardTitle']."</td>";
-        echo "<tr><th>등록자</th><td>".$info['youName']."</td>";
-        echo "<tr><th>등록일</th><td>".date('Y. m. d', $info['regTime'])."</td>";
-        echo "<tr><th>조회수</th><td>".$info['boardView']."</td>";
-        echo "<tr><th>내용</th><td>".$info['boardContents']."</td>";
+            echo "<tr><th>제목</th><td>" . $info['boardTitle'] . "</td>";
+            echo "<tr><th>등록자</th><td>" . $info['youName'] . "</td>";
+            echo "<tr><th>등록일</th><td>" . date('Y. m. d', $info['regTime']) . "</td>";
+            echo "<tr><th>조회수</th><td>" . $info['boardView'] . "</td>";
+            echo "<tr><th>내용</th><td>" . $info['boardContents'] . "</td>";
+        } else {
+            echo "<tr><td colspan='4'>존재하지 않은 게시물입니다.</td></tr>";
+        }
     } else {
-        echo "<tr><td colspan='4'> 선택된 게시글이 없습니다. </td></tr>";
+        echo "<tr><td colspan='4'>존재하지 않는 게시물입니다.</td></tr>";
     }
 ?>
                     </tbody>
@@ -87,7 +90,7 @@
             </div>
             <div class="board__btn">
                 <a href="boardModify.php?boardID=<?=$_GET['boardID'] ?>" class="btnStyle3">수정하기</a>
-                <a href="boardRemove.php?boardID=<?=$_GET['boardID'] ?>" class="btnStyle3" onclick="delete(),'')">삭제하기</a>
+                <a href="boardRemove.php?boardID=<?=$_GET['boardID'] ?>" class="btnStyle3" onclick="return confirm('정말 삭제하시겠습니까?', '')">삭제하기</a>
                 <a href="board.php" class="btnStyle3">목록보기</a>
             </div>
         </div>
@@ -96,15 +99,6 @@
 
     <?php include "../include/footer.php" ?>
     <!-- footer -->
-
-    <!-- <script>
-        function delete(){
-            if(confirm("정말 삭제하시겠습니까 ?")){
-            } else {
-                location.href = `boardView.php${boardID}`;
-            }
-        }
-    </script> -->
 
 </body>
 </html>
