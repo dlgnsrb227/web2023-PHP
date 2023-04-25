@@ -74,76 +74,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <!-- <tr>
                             <td>1</td>
                             <td><a href="boardView.html">게시판 제목이 들어가는 부분입니다.</a></td>
                             <td>이훈규</td>
                             <td>23.02.02</td>
                             <td>227</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><a href="boardView.html">게시판 제목이 들어가는 부분입니다.</a></td>
-                            <td>이훈규</td>
-                            <td>23.02.02</td>
-                            <td>123</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td><a href="boardView.html">게시판 제목이 들어가는 부분입니다.</a></td>
-                            <td>이훈규</td>
-                            <td>23.02.02</td>
-                            <td>345</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td><a href="boardView.html">게시판 제목이 들어가는 부분입니다.</a></td>
-                            <td>이훈규</td>
-                            <td>23.02.02</td>
-                            <td>783</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td><a href="boardView.html">게시판 제목이 들어가는 부분입니다.</a></td>
-                            <td>이훈규</td>
-                            <td>23.02.02</td>
-                            <td>453</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td><a href="boardView.html">게시판 제목이 들어가는 부분입니다.</a></td>
-                            <td>이훈규</td>
-                            <td>23.02.02</td>
-                            <td>245</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td><a href="boardView.html">게시판 제목이 들어가는 부분입니다.</a></td>
-                            <td>이훈규</td>
-                            <td>23.02.02</td>
-                            <td>765</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td><a href="boardView.html">게시판 제목이 들어가는 부분입니다.</a></td>
-                            <td>이훈규</td>
-                            <td>23.02.02</td>
-                            <td>245</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td><a href="boardView.html">게시판 제목이 들어가는 부분입니다.</a></td>
-                            <td>이훈규</td>
-                            <td>23.02.02</td>
-                            <td>352</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td><a href="boardView.html">게시판 제목이 들어가는 부분입니다.</a></td>
-                            <td>이훈규</td>
-                            <td>23.02.02</td>
-                            <td>785</td>
-                        </tr>
+                        </tr> -->
+<?php
+    $sql = "SELECT b.boardID, b.boardTitle, m.youName, b.regTime, b.boardView FROM board b JOIN members m ON(b.memberID = m.memberID) ORDER BY boardID DESC LIMIT 10";
+    $result = $connect -> query($sql);
+
+    if($result){
+        $count = $result -> num_rows;
+
+        if($count > 0){
+            for($i=0; $i<$count; $i++){
+                $info = $result -> fetch_array(MYSQLI_ASSOC);
+
+                echo "<tr>";
+                echo "<td>".$info['boardID']."</td>";
+                echo "<td><a href='boardView.php?boardID={$info['boardID']}'>".$info['boardTitle']."</a></td>";
+                echo "<td>".$info['youName']."</td>";
+                echo "<td>".date('Y. m. d', $info['regTime'])."</td>";
+                echo "<td>".$info['boardView']."</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='4'> 선택된 게시글이 없습니다. </td></tr>";
+        }
+    }
+?>
                     </tbody>
                 </table>
             </div>

@@ -2,18 +2,16 @@
     include "../connect/connect.php";
     include "../connect/session.php";
 
+    $boardID = $_POST['boardID'];
     $boardTitle = $_POST['boardTitle'];
     $boardContents = $_POST['boardContents'];
-    $boardView = 1;
-    $regTime = time();
-    $memberID = $_SESSION['memberID'];
 
     $boardTitle = $connect -> real_escape_string($boardTitle);
     $boardContents = $connect -> real_escape_string($boardContents);
+    $memberID = $_SESSION['memberID'];
 
-    $sql = "INSERT INTO board(memberID, boardTitle, boardContents, boardView, regTime) VALUES('$memberID', '$boardTitle', '$boardContents', '$boardView', '$regTime')";
+    $sql = "UPDATE board SET boardTitle = '{$boardTitle}', boardContents = '{$boardContents}' WHERE boardID = '{$boardID}'";
     $connect -> query($sql);
-
 ?>
 
 <script>
