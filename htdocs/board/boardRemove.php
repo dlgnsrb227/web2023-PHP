@@ -1,6 +1,7 @@
 <?php
     include "../connect/connect.php";
     include "../connect/session.php";
+    include "../connect/sessionCheck.php";
 
     $boardID = $_GET['boardID'];
     $boardID = $connect -> real_escape_string($boardID);

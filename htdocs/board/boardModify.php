@@ -1,6 +1,7 @@
 <?php
     include "../connect/connect.php";
     include "../connect/session.php";
+    include "../connect/sessionCheck.php";
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +52,7 @@
         echo "<div style='display:none'><label for='boardID'>번호</label><input type='text' id='boardID' name='boardID' class='inputStyle' value='".$info['boardID']."'></div>";
         echo "<div><label for='boardTitle'>제목</label><input type='text' id='boardTitle' name='boardTitle' class='inputStyle' value='".$info['boardTitle']."'></div>";
         echo "<div><label for='boardContents'>내용</label><textarea name='boardContents' id='boardContents' rows='20' class='inputStyle'>".$info['boardContents']."</textarea></div>";
+        echo "<div class='mt50'><label for='boardPass'>비밀번호</label><input type='password' id='boardPass' name='boardPass' class='inputStyle' autocomplete='off' required placeholder='글을 수정하시려면 로그인 비밀번호를 입력하세요.'></div>";
     }
 ?>
                         <!-- <div>
