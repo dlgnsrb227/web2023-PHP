@@ -17,6 +17,9 @@
     font-size: 1.6rem;
     font-weight: 300;
 }
+.intro__text em {
+    color: red;
+}
 .intro__inner.center {
     flex-direction: column;
 }

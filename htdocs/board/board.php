@@ -37,14 +37,14 @@
         <div class="board__inner">
             <div class="board__search">
                 <div class="left">
-                    *총 <em>1111</em> 건의 게시물이 등록되어 있습니다.
+                    *총 <em></em> 건의 게시물이 등록되어 있습니다.
                 </div>
                 <div class="right">
-                    <form action="#" name="#" method="post">
+                    <form action="boardSearch.php" name="boardSearch" method="get">
                         <fieldset>
                             <legend class="blind">게시판 검색 영역</legend>
-                            <input type="search" placeholder="검색어를 입력하세요!">
-                            <select name="#" id="#">
+                            <input type="search" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력하세요!" required>
+                            <select name="searchOption" id="searchOption">
                                 <option value="title">제목</option>
                                 <option value="content">내용</option>
                                 <option value="name">등록자</option>
@@ -132,6 +132,14 @@
 
     $boardTotalCount = $result -> fetch_array(MYSQLI_ASSOC);
     $boardTotalCount = $boardTotalCount['count(boardID)'];
+
+    echo "
+        <script>
+            const count = document.querySelector('.board__search .left em');
+
+            count.innerHTML = $boardTotalCount;
+        </script>
+    ";
 
     //총 페이지 개수
     $boardTotalCount = ceil($boardTotalCount/$viewNum);
