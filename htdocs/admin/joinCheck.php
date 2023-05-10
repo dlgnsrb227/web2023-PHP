@@ -4,12 +4,12 @@
     // SELECT youEmail FROM adminMembers WHERE youEmail = {}
 
     $type = $_POST['type'];
-    $email = $_POST['youEmail']
+    $email = $_POST['youEmail'];
     $jsonResult = "bad";
 
     if($type == "isEmailCheck"){
         $youEmail = $connect -> real_escape_string(trim($email));
-        $sql = "SELECT youEmail FROM adminMembers WHERE youEmail = '{$youEmail}'";
+        $sql = "SELECT adminEmail FROM adminMembers WHERE adminEmail = '{$youEmail}'";
     }
 
     $result = $connect -> query($sql);
@@ -18,5 +18,5 @@
         $jsonResult = "good";
     }
 
-    echo json_encode(array("result" => $jsonResult))
+    echo json_encode(array("result" => $jsonResult));
 ?>
